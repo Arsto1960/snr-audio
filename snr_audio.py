@@ -2,13 +2,6 @@ import streamlit as st
 from numpy import *
 from matplotlib.pyplot import *
 import soundfile
-import io
-
-def st_audio(signal, samplerate=44100):
-    byte_io = io.BytesIO()
-    sub = 'FLOAT'  # could be 'PCM_32' or 'FLOAT'
-    soundfile.write(byte_io, signal, samplerate, subtype=sub, format='WAV')
-    st.audio(byte_io)
 
 st.title('Signal-to-Noise Ratio (audio)')
 st.markdown('''How noisy is an audio signal with 40, 30, 20, 10, 0, -10dB SNR? Try it by yourself!''')
@@ -33,7 +26,7 @@ ylim(-2,2)
 text(0.53,1.65,'SNR [dB]='+str(around(snr,2)),fontsize='xx-large')
 st.pyplot(fig)
 
-st_audio(signal_plus_noise,fe)
+st.audio(signal_plus_noise,sample_rate=fe)
 
 with st.expander("Open for comments"):
    st.markdown('''SNR is defined as the ratio of the power of a signal to that of the additional 
