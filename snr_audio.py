@@ -3,11 +3,11 @@ from numpy import *
 from matplotlib.pyplot import *
 import soundfile
 
-# st.markdown("### 🔊 Signal-to-Noise Ratio (SNR)")
-# st.markdown(
-#     "Experience how different noise levels affect an audio signal. "
-#     "**Positive SNR** means the signal is stronger; **Negative SNR** means the noise is stronger."
-# )
+st.markdown("### 🔊 Signal-to-Noise Ratio (SNR)")
+st.markdown(
+    "Experience how different noise levels affect an audio signal. "
+    "**Positive SNR** means the signal is stronger; **Negative SNR** means the noise is stronger."
+)
 
 signal,fe = soundfile.read('par8.wav')
 
@@ -192,5 +192,6 @@ with st.expander("Open for comments"):
     
     
 #     """)
+
 
 
