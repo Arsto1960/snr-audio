@@ -8,7 +8,7 @@ st.markdown(
     "Experience how different noise levels affect an audio signal. "
     "**Positive SNR** means the signal is stronger; **Negative SNR** means the noise is stronger."
 )
-
+snr=st.slider('SNR (dB)): ', -10, 40, 40)
 signal,fe = soundfile.read('par8.wav')
 
 t=arange(0,len(signal))/fe;
@@ -192,6 +192,7 @@ with st.expander("Open for comments"):
     
     
 #     """)
+
 
 
 
